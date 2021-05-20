@@ -15,13 +15,13 @@ const createSlideshow = function () {
     const stopSlideShow = function () {
         clearInterval(timer);
     };
-    //My code- finish- AJH
+
     const startSlideShow = function () {
         if (arguments.length === 2) {
             nodes.image = arguments[0];
             nodes.caption = arguments[1];
         }
-        //AJH timer = setInterval(displayNextImage, 2000);
+   
         timer = setInterval(displayNextImage, speed);
         return this;
     };
@@ -57,18 +57,16 @@ const createSlideshow = function () {
             }
             return this;
         },
-        //My code- finish- AJH
+     
         startSlideShow: function () {
             if (arguments.length === 2) {
                 nodes.image = arguments[0];
                 nodes.caption = arguments[1];
             }
-            //AJH timer = setInterval(displayNextImage, 2000);
             timer = setInterval(displayNextImage, speed);
             return this;
         },
 
-        //My code- start- AJH
         setSpeed: function () {
             let userSpeed = parseInt (prompt("The speed is 2 sec., what is going to be your new speed (select a number from 1-5?", speed/1000));
             if (userSpeed <= 0) {
@@ -121,6 +119,6 @@ window.addEventListener('load', () => {
     slideshow.loadImages(slides).startSlideShow($('image'), $('caption'));
     // PAUSE THE SLIDESHOW
     $('play_pause').onclick = slideshow.createToggleHandler();
-    //SPEED -AJH
+
     $('speed').onclick = slideshow.setSpeed;
 });
